@@ -1,2 +1,2 @@
-# Electronic-Shop-Management
-I developed a desktop application electronic shop management using VB.Net
+# Electronics-store
+I developed a desktop application electronics store using VB.Net
