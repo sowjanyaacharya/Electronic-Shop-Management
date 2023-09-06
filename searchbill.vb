@@ -1,5 +1,5 @@
 'search bill is used to search the bill
-Public Class still 
+Public Class bill 
 Dim cnn As OleDb.OleDbConnection
 Dim cmd As OleDb.OleDbCommand 
 Dim dr As OleDb.OleDbDataReader
