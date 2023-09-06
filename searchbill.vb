@@ -1,3 +1,4 @@
+'search bill is used to search the bill
 Public Class still 
 Dim cnn As OleDb.OleDbConnection
 Dim cmd As OleDb.OleDbCommand 
@@ -13,7 +14,7 @@ Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.Event
 
 cnn = New OleDb.OleDbConnection("Provider=Microsoft ACE.OLEDB 12.0;Data Source=D:\project2021\project21.accdb")
 cnn.open()
-
+'extracting the datas from the billing table
 cmd= New OleDb.OleDbCommand("select Item_id,Item_name,Bill_date,Brand,Description,Quantity Price, Total from billing where bill_no = " & TextBox1.Text & "")
 
 cmd.Connection = cnn
