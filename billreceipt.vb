@@ -1,4 +1,4 @@
-'This form is used to print the bill of the buyed items
+'This form is used to print the billreceipt of the buyed items
 Public Class print Dim str As String
 'Declaring the variables
 Dim cnn As OleDb.OleDbConnection
