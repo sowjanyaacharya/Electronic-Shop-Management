@@ -1,3 +1,4 @@
+'this form is used to display the generating bill form and printing the bill form
 Public Class bill
 
 Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
