@@ -1,3 +1,4 @@
+'This form is to generate or produce the bill can also take the print
 Public Class bill1
 
 Dim cnn As OleDb.OleDbConnection 
@@ -49,7 +50,7 @@ dr.Close()
 
 TextBox2.Focus() 
 End Sub
-
+'Entering the customer details
 Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click 
 If Len(TextBox2.Text) = 0 Then
 
@@ -96,6 +97,7 @@ available_qty = dr(0)
 
 Exit While
 End While
+      'checking for availability of the items
 If available_qty<Val(TextBox6.Text) Then 
  MsgBox("Insufficient Stock")
 
@@ -128,14 +130,14 @@ description = dr(3)
 Total = qty * price
 
 Grand_total = Grand_total + Total
-
+'making the calculations of the item
 Dim row As String() = New String() {i, ComboBox1.Text, TextBox3.Text. TextBox4.Text, TextBox5.Text, qty, price, total}
  DataGridView1.Rows.Add(row)
 
 i=i+1
 
 Dim rqty As Double = main_qty - qty
-
+'update the quantity coloumn as the items are selled it must become minused from the items table also
 str = "update items set quantity = "&rqty&" where item_id = " & ComboBox1.Text & ""
 
 
@@ -143,7 +145,7 @@ str = "update items set quantity = "&rqty&" where item_id = " & ComboBox1.Text &
 cmd = New OleDb.OleDbCommand(str, cnn)
 
 cmd.ExecuteNonQuery()
-
+'adding to the billing table 
 str = "insert into billing (Bill_no, Cust_name, Cust_address, Item_id, Item_name, Brand, Description, Quantity, Bill date, Price, Total,Grand Total) values (" &TextBox1.Text & ",'" & TextBox2.Text & "','" & RichTextBox1.Text & "',"& ComboBox1.Text & ",'" & TextBox3.Text & "','" & TextBox4.Text & "','" & TextBox5.Text &"',"& TextBox6.Text & ",#"&DateTimePicker1.Text&"#,"& price &","& Total & "," & Grand_total &")"
 cmd = New OleDb.OleDbCommand(str,cnn)
 
