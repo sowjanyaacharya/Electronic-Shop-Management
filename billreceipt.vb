@@ -1,5 +1,6 @@
+'This form is used to print the bill of the buyed items
 Public Class print Dim str As String
-
+'Declaring the variables
 Dim cnn As OleDb.OleDbConnection
 Dim cmd As OleDb.OleDbCommand
 Dim dr As OleDb.OleDbDataReader
@@ -18,7 +19,7 @@ DataGridView1.Visible = True
 cnn = New OleDb.OleDbConnection("Provider=MiosotACE.CLED8.12.0;DataSource:\project2021\project21") 
 
 cnn.Open()
-
+'extracting the data from the database table billing
 str="select Item name,Brand, Description Quantity, Price, Total, Grand_Total from billing where Bill_no="&bill1.TextBox1.Text &"" 
 
 cmd = OleDb.OleDbCommand(str,cnn)
@@ -35,9 +36,10 @@ description = dr(2)
 qty = dr(3)
 price = dr(4)
 Total = dr(5)
+      'making total and grand total
 Grand_total = Grand_total + Total
 Dim row As String() = New String() {item name, brand, description, qty, price,Total}
-
+'Adding it to the grid
 DataGridView1.Rows.Add(row)
 
 End While
