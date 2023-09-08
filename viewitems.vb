@@ -1,5 +1,6 @@
+'this is to get the display view of the items
 Public Class Viewitems
-
+'declaring the variables using dim
 Dim cnn As OleDb.OleDbConnection 
 Dim cmd As OleDb.OleDbCommand 
 Dim dr As OleDb.OleDbDataReader
@@ -7,9 +8,7 @@ Dim dr As OleDb.OleDbDataReader
 
 Dim ds As DataSet 
 
-Private Sub view_Click(ByVal sender As System.EventArgs) Handles view.Click
-
-System.Object, ByVal e As
+Private Sub view_Click(ByVal sender As System.EventArgs) Handles view.ClickSystem.Object, ByVal e As
 
 cnn = New OleDb.OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0:Data Source D:\project2021\project21.accdb")
 
@@ -26,7 +25,7 @@ da.SelectCommand = cmd
 ds= New DataSet
 
 da.Fill(ds, "items")
-
+'displaying the items by using grid
 DataGridView1.DataSource = ds.Tables("items")
 
 End Sub
