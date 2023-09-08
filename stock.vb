@@ -1,4 +1,6 @@
+'Stock in hand report we can get here
 Public Class stockhand 
+  'declaring the variables using dim
 Dim cnn As OleDb.OleDbConnection
 Dim cmd As OleDb.OleDbCommand 
 Dim dr As OleDb.OleDbDataReader
@@ -6,7 +8,7 @@ Dim da As OleDb.OleDbDataAdapter
 Dim ds As DataSet
 
 Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-
+'opening the database connection
 cnn = New OleDb.OleDbConnection("Provider=Microsoft ACE OLEDB 12.0;DataSource=D:\project2021\project21.accdb")
 
 cnn.Open()
@@ -26,7 +28,7 @@ da = New OleDb.OleDbDataAdapter
 da.SelectCommand = cmd
 
 ds = New DataSet
-
+'displaying the report of the stock
 da.Fill(ds, "items")
 
 DataGridView1.DataSource= ds.Tables("items")
