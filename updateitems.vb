@@ -1,5 +1,6 @@
+'updating the items in the database
 Public Class Updateitem
-
+'declaring the variables using the dim
 Dim cnn As OleDb.OleDbConnection
 Dim cnn1 As OleDb.OleDbConnection
 Dim cmd As OleDb.OleDbCommand 
@@ -8,6 +9,7 @@ Dim dr As OleDb.OleDbDataReader
 Dim dri As OleDb.OleDbDataReader
 
 Private Sub Updateltem_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load 
+  'open the connection
 cnn = New OleDb.OleDbConnection("Provider=Microsoft.ACE.OLEDB. 12.0,Da Source=D:\project2021\project21.accdb")
 cnn.Open()
 
@@ -44,7 +46,7 @@ End If
 
 cnn New OleDb.OleDbConnection("Provider=Microsoft.ACE.OLEDB:12.0)DataSource=D:\project2021\project21.accdb") 
 cnn.Open()
-
+'using the update query
 Dim sql As String 
 sql = "Update items set Quantity = " & TextBox2.Text &" where Item_id=" & ComboBox1.Text &""
 
